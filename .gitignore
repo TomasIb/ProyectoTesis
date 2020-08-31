@@ -1,0 +1,23 @@
+/node_modules
+/venv
+
+.env
+
+/build
+/dist
+
+
+# prod
+/public/server
+
+# misc
+__pycache__
+pysrc/__pycache__
+pysrc/app/__pycache__
+pysrc/app/__init__.pyc
+pysrc/config.pyc
+.DS_Store
+src/.DS_Store
+public/.DS_Store
+.vscode
+

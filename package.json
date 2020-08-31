@@ -1,0 +1,101 @@
+{
+  "name": "tesis-pipe-ml",
+  "author": "Tom Ibanez",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "main": "public/electron.js",
+  "dependencies": {
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@nivo/line": "^0.62.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "concurrently": "^5.2.0",
+    "electron-is-dev": "^1.2.0",
+    "js-file-download": "^0.4.12",
+    "material-ui-dropzone": "^3.3.0",
+    "notistack": "^0.9.17",
+    "react": "^16.13.1",
+    "react-circle": "^1.1.1",
+    "react-csv": "^2.0.3",
+    "react-dom": "^16.13.1",
+    "react-responsive-carousel": "^3.2.8",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "react-virtualized": "^9.21.2",
+    "recharts": "^1.8.5",
+    "request-promise": "^4.2.5",
+    "socket.io-client": "^2.3.0",
+    "wait-on": "^5.0.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^22.7.0",
+    "electron": "^9.0.4"
+  },
+  "scripts": {    
+    "start": "react-scripts start",
+    "install-py":"python3 -m venv venv && source venv/bin/activate && pip install --no-cache-dir -r pysrc/requirements.txt",
+    "dev-py": "python pysrc/server.py",
+    "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-build": "pyinstaller server.spec --distpath=./public && react-scripts build",             
+    "dist": "electron-builder"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "build": {
+    "appId": "com.pipe.msmlv1",
+    "productName": "Pipe",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "resources"
+    },
+    "asar": false,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    }
+  }
+}
