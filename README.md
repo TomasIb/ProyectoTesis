@@ -6,7 +6,7 @@ Software generador de matriz de intensidades relativas con datos de espectrometr
 
 Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+Mira **Build** para conocer como construir el proyecto.
 
 
 ### Pre-requisitos 📋
@@ -14,7 +14,9 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 _Que cosas necesitas para instalar el software y como instalarlas_
 
 ```
-Da un ejemplo
+Node
+Python 3
+Electron
 ```
 
 ### Instalación 🔧
